@@ -9,15 +9,20 @@
 <body>
     <header>
         <h1>My CV - English Version</h1>
-        <nav>
+
+        <div class="nav-container">
+            <nav>
+            <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="cv_fr.html">CV en Français</a></li>
-                <li><a href="cv_en.html">CV in English</a></li>
+                <li><a href="cv_en.html"class="active">CV in English</a></li>
                 <li><a href="projets.html">University Projects</a></li>
                 <li><a href="realisations.html">Professional Achievements</a></li>
-            </ul>
-        </nav>
+                <li><a href="perso.html">Professional personal</a></li>
+              </ul>
+          </nav>
+        </div> 
     </header>
     <main>
         <section>
@@ -82,12 +87,35 @@
             </ul>
         </section>
         <section>
-            <h2>Work Experience</h2>
+            <h2>Experience</h2>
             <ul>
-                <li>Intern, Phyling (September 2020 – June 2021): Website redesign</li>
-                <li>Intern, Incubator of École Polytechnique (10 weeks in 2024)</li>
+                <li>
+                    <strong>Safran - Intern (14 weeks in 2025)</strong>
+                    <ul>
+                        <li>Main objective: Process improvement and workflow automation.</li>
+                        <li>Key contributions:</li>
+                        <ul>
+                            <li><strong>Needs analysis:</strong> participated in meetings with functional and technical teams to ensure solution consistency and understand business expectations.</li>
+                            <li><strong>Jira automation:</strong> created Groovy scripts using ScriptRunner to automate workflows, streamline repetitive tasks, and improve ticket tracking.</li>
+                            <li><strong>Quality and collaboration:</strong> performed testing, deployment, script documentation, and continuous adjustments based on user feedback.</li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Phyling (École Polytechnique Incubator) - Intern (10 weeks in 2024)</strong>
+                    <ul>
+                        <li>Main objective: Redesign the website of a startup to enhance its user interface and customer experience.</li>
+                        <li>Key contributions:</li>
+                        <ul>
+                            <li><strong>Website redesign:</strong> conducted an audit of the existing site, developed a new front-end architecture (HTML, CSS, JavaScript), and improved UI/UX design.</li>
+                            <li><strong>Teamwork:</strong> collaborated with internal teams, participated in brainstorming sessions, and managed the project in an entrepreneurial environment.</li>
+                            <li><strong>4G sensor development:</strong> developed a communication API, integrated the SIM7600 module for data transmission, and validated the system through field testing.</li>
+                        </ul>
+                    </ul>
+                </li>
             </ul>
         </section>
+        
         <section>
             <h2>Certifications</h2>
             <ul>
@@ -104,7 +132,26 @@
         </section>
     </main>
     <footer>
-        <p>© 2024 Alice Meraud</p>
+        <p>© 2025 Alice Meraud</p>
     </footer>
 </body>
 </html>
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  toggle.classList.toggle('open');
+});
+
+// Optional: close menu when clicking on a link (on mobile)
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('show');
+      toggle.classList.remove('open');
+    }
+  });
+});
+</script>

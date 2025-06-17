@@ -9,25 +9,29 @@
 <body>
     <header>
         <h1>Bienvenue sur mon site</h1>
-        <nav>
+        <div class="nav-container">
+            <nav>
+            <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html"class="active">Home</a></li>
                 <li><a href="cv_fr.html">CV en Français</a></li>
                 <li><a href="cv_en.html">CV in English</a></li>
-                <li><a href="projets.html">Projets Universitaires</a></li>
-                <li><a href="realisations.html">Réalisations Professionnelles</a></li>
-            </ul>
-        </nav>
+                <li><a href="projets.html">University Projects</a></li>
+                <li><a href="realisations.html">Professional Achievements</a></li>
+                <li><a href="perso.html">Réalisation personnel</a></li>
+              </ul>
+          </nav>
+        </div> 
     </header>
     <main>
-        <section style="max-width: 1000px; margin: 0 auto; padding: 40px 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <h2 style="font-family: 'Arial', sans-serif; color: #333; text-align: center; font-size: 28px; margin-bottom: 20px;">À propos de moi</h2>
+        <section >
+            <h2 >À propos de moi</h2>
             
-            <div style="display: flex; flex-direction: column; gap: 30px;">
+            <div >
                 <!-- Section Scoutisme -->
                 <section>
-                    <h3 style="font-family: 'Arial', sans-serif; color: #2d2d2d; font-size: 24px; margin-bottom: 10px;">Scoutisme</h3>
-                    <p style="font-family: 'Verdana', sans-serif; font-size: 16px; color: #555; line-height: 1.6;">
+                    <h3 >Scoutisme</h3>
+                    <p >
                         Depuis 2022, je suis animatrice de scoutisme, ce qui me permet de participer activement à l'organisation 
                         d'événements et de projets à l’échelle territoriale. Le scoutisme m’a aidé à développer des compétences 
                         en gestion d'équipe, en leadership et en organisation, tout en transmettant des valeurs de solidarité 
@@ -37,8 +41,8 @@
     
                 <!-- Section Sport -->
                 <section>
-                    <h3 style="font-family: 'Arial', sans-serif; color: #2d2d2d; font-size: 24px; margin-bottom: 10px;">Ma passion pour le sport</h3>
-                    <p style="font-family: 'Verdana', sans-serif; font-size: 16px; color: #555; line-height: 1.6;">
+                    <h3 >Ma passion pour le sport</h3>
+                    <p >
                         Le sport occupe une place essentielle dans ma vie, avec une passion particulière pour le handball, 
                         la natation et les rollers. Ces activités sont pour moi des moyens de maintenir un équilibre physique 
                         et mental. Le handball m’a appris à travailler en équipe, à élaborer des stratégies, tandis que la 
@@ -48,8 +52,8 @@
     
                 <!-- Section Musique -->
                 <section>
-                    <h3 style="font-family: 'Arial', sans-serif; color: #2d2d2d; font-size: 24px; margin-bottom: 10px;">La musique </h3>
-                    <p style="font-family: 'Verdana', sans-serif; font-size: 16px; color: #555; line-height: 1.6;">
+                    <h3 >La musique </h3>
+                    <p >
                         J'ai appris à jouer de la guitare et du ukulélé en autodidacte, ce qui m'a permis de développer mes compétences musicales tout en explorant divers styles musicaux. Ces instruments sont pour moi un moyen d'expression créatif et un excellent moyen de me détendre. La musique occupe une place importante dans ma vie et me permet de partager des moments de convivialité avec mes amis et ma famille.
 
                     </p>
@@ -57,7 +61,7 @@
     
                 <!-- Section Conclusion -->
                 <section>
-                    <p style="font-family: 'Verdana', sans-serif; font-size: 16px; color: #555; line-height: 1.6;">
+                    <p >
                         Ces expériences en dehors de mes études sont une source précieuse de développement personnel, et elles 
                         complètent mes compétences techniques et professionnelles tout en enrichissant ma vie quotidienne.
                     </p>
@@ -68,7 +72,26 @@
     
     
     <footer>
-        <p>© 2024 Alice Meraud</p>
+        <p>© 2025 Alice Meraud</p>
     </footer>
 </body>
 </html>
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  toggle.classList.toggle('open');
+});
+
+// Optional: close menu when clicking on a link (on mobile)
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('show');
+      toggle.classList.remove('open');
+    }
+  });
+});
+</script>

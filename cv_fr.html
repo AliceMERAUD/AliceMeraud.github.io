@@ -9,15 +9,19 @@
 <body>
     <header>
         <h1>Mon CV - Version Française</h1>
-        <nav>
+        <div class="nav-container">
+            <nav>
+            <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="cv_fr.html">CV en Français</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv_fr.html"class="active">CV en Français</a></li>
                 <li><a href="cv_en.html">CV in English</a></li>
-                <li><a href="projets.html">Projets Universitaires</a></li>
-                <li><a href="realisations.html">Réalisations Professionnelles</a></li>
-            </ul>
-        </nav>
+                <li><a href="projets.html">University Projects</a></li>
+                <li><a href="realisations.html">Professional Achievements</a></li>
+                <li><a href="perso.html">Réalisation personnel</a></li>
+              </ul>
+          </nav>
+        </div> 
     </header>
     <main>
         <section>
@@ -96,16 +100,27 @@
             <h2>Expériences</h2>
             <ul>
                 <li>
-                    <strong>Incubateur de l'École Polytechnique - Stagiaire (10 semaines en 2024)</strong>
+                    <strong>Safran - Stagiaire (14 semaines en 2025)</strong>
+                    <ul>
+                        <li>Objectif principal : Amélioration de</li>
+                        <li>Contributions clés :</li>
+                        <ul>
+                            <li><strong>Analyse des besoins :</strong> participation à des réunions avec les équipes fonctionnelles et techniques pour garantir la cohérence des solutions et comprendre les attentes métiers.</li>
+                            <li><strong>Automatisation sur Jira :</strong> création de scripts en Groovy avec ScriptRunner pour automatiser des workflows, optimiser les tâches répétitives et améliorer le suivi des tickets.</li>
+                            <li><strong>Qualité et collaboration :</strong> réalisation de tests, déploiement, documentation des scripts et ajustements continus selon les retours des utilisateurs finaux.</li>                        
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Phyling (Incubateur de l'École Polytechnique) - Stagiaire (10 semaines en 2024)</strong>
                     <ul>
                         <li>Objectif principal : Refonte du site web d'une start-up incubée pour améliorer son interface utilisateur et son expérience client.</li>
                         <li>Contributions clés :</li>
                         <ul>
-                            <li>Réalisation d’un audit complet de l'existant et identification des points d'amélioration.</li>
-                            <li>Développement d'une nouvelle architecture front-end en utilisant HTML, CSS et JavaScript.</li>
-                            <li>Mise en œuvre de solutions UI/UX modernes pour renforcer l’ergonomie du site.</li>
-                            <li>Collaboration avec les équipes internes pour intégrer les fonctionnalités supplémentaires demandées.</li>
-                            <li>Participation à des sessions de brainstorming et à la gestion de projets dans un environnement entrepreneurial.</li>
+                            <li><strong>Refonte du site web :</strong> audit de l’existant, développement d’une nouvelle architecture front-end (HTML, CSS, JavaScript) et amélioration de l’ergonomie via des solutions UI/UX modernes.</li>
+                            <li><strong>Travail en équipe :</strong> collaboration avec les équipes internes, participation à des sessions de brainstorming et gestion de projet dans un cadre entrepreneurial.</li>
+                            <li><strong>Développement d’un capteur 4G :</strong> création d’une API de communication, intégration du module SIM7600 pour la transmission des données et validation du système par des tests terrain.</li>
+
                         </ul>
                     </ul>
                 </li>
@@ -115,6 +130,7 @@
             <h2>Certifications</h2>
             <ul>
                 <li>BAFA (Brevet d'Aptitude aux Fonctions d'Animateur)</li>
+                <li>MASS (Directrice de )</li>
                 <li>PSC1 (Premiers Secours Civiques de niveau 1)</li>
             </ul>
         </section>
@@ -148,7 +164,26 @@
 </section>
 </main>
     <footer>
-        <p>© 2024 Alice Meraud</p>
+        <p>© 2025 Alice Meraud</p>
     </footer>
 </body>
 </html>
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  toggle.classList.toggle('open');
+});
+
+// Optional: close menu when clicking on a link (on mobile)
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('show');
+      toggle.classList.remove('open');
+    }
+  });
+});
+</script>

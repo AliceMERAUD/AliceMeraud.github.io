@@ -9,15 +9,19 @@
 <body>
     <header>
         <h1>Mes Réalisations Professionnelles</h1>
-        <nav>
+        <div class="nav-container">
+            <nav>
+            <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
             <ul>
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="cv_fr.html">CV en Français</a></li>
                 <li><a href="cv_en.html">CV in English</a></li>
-                <li><a href="projets.html">Projets Universitaires</a></li>
-                <li><a href="realisations.html">Réalisations Professionnelles</a></li>
-            </ul>
-        </nav>
+                <li><a href="projets.html">University Projects</a></li>
+                <li><a href="realisations.html"class="active">Professional Achievements</a></li>
+                <li><a href="perso.html">Réalisation personnel</a></li>
+              </ul>
+          </nav>
+        </div>
     </header>
     <main>
         <section>
@@ -70,8 +74,8 @@
                         <li>Implémentation de fonctionnalités supplémentaires selon les besoins de l’entreprise.</li>
                     </ul>
                 </ul>
-                <img src="img/phyling_projectAvant.png" alt="Aperçu du projet PHYLING avant" style="width:50%;margin-top:10px;">
-                <img src="img/phyling_projectApres.png" alt="Aperçu du projet PHYLING apres" style="width:50%;margin-top:10px;">
+                <div><img src="img/phyling_projectAvant.png" alt="Aperçu du projet PHYLING avant" style="width:50%;margin-top:10px;"></div>
+                <div><img src="img/phyling_projectApres.png" alt="Aperçu du projet PHYLING apres" style="width:50%;margin-top:10px;"></div>
             </section>
             <section>
                 <h2>Missions 2 : Code de capteur 4G pour PHYLING</h2>
@@ -92,7 +96,26 @@
 
 </main>
     <footer>
-        <p>© 2024 Alice Meraud</p>
+        <p>© 2025 Alice Meraud</p>
     </footer>
 </body>
 </html>
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  toggle.classList.toggle('open');
+});
+
+// Optional: close menu when clicking on a link (on mobile)
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('show');
+      toggle.classList.remove('open');
+    }
+  });
+});
+</script>

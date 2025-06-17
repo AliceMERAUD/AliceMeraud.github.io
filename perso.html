@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet perso</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animation.js">
+</head>
+<body>
+    <header>
+        <h1>Projet : Site pour organiser menus et activités</h1>
+        
+        <div class="nav-container">
+            <nav>
+            <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cv_fr.html">CV en Français</a></li>
+                <li><a href="cv_en.html">CV in English</a></li>
+                <li><a href="projets.html">University Projects</a></li>
+                <li><a href="realisations.html">Professional Achievements</a></li>
+                <li><a href="perso.html"class="active">Réalisation personnel</a></li>
+              </ul>
+          </nav>
+        </div> 
+    </header>
+
+  <main>
+
+<section>
+    <h2>🎯 Objectif</h2>
+    <p>
+      Ce projet vise à alléger le temps nécessaire à la création de menus adaptés à la saison et à organiser facilement des activités pour les jeunes. Il a été conçu pour répondre à des besoins pratiques du quotidien.
+    </p>
+</section>
+<section>
+    <h2>🛠️ Fonctionnalités</h2>
+
+    <section>
+        <h3>🍽️ Gestion de menus</h3>
+        <ul>
+        <li>Création de menus saisonniers</li>
+        <li>Ajustement automatique des quantités selon le nombre de personnes</li>
+        <li>Organisation des repas sur une semaine complète</li>
+        <li>Génération de listes de courses triées (légumes, produits frais...)</li>
+        </ul>
+    </section>
+    <section>
+        <h3>🎲 Organisation d’activités</h3>
+        <ul>
+        <li>Filtrage par âge des jeunes, nombre de participants et accessoires nécessaires</li>
+        <li>Ajout de nouvelles activités personnalisées</li>
+        </ul>
+    </section>
+    <section>
+        <h3>📥 Ajout de contenu</h3>
+        <p>
+        Un système permet de proposer des recettes ou des activités via une messagerie. Comme je n’utilise pas de serveur, je trie manuellement les propositions avant de les intégrer à la base de données.
+        </p>
+    </section>
+</section>
+ <section>
+        <h2>🔧 Technologies</h2>
+        <ul>
+        <li>Site statique hébergé sur GitHub Pages</li>
+        <li>HTML, CSS et JavaScript</li>
+        <li>Base de données locale (JSON ou SQLite)</li>
+        <li>Sans serveur (pas de backend)</li>
+        </ul>
+    </section>
+
+<section>
+    <h2>📅 Avancement</h2>
+    <p>
+      Ce projet a été commencé pendant mes vacances. Il est en cours de développement. La base de données demande du temps pour être suffisamment complète, mais j’espère finaliser ce projet avant la fin de l’année.
+    </p>
+</section>
+<section>
+    <h2>💡 Compétences développées</h2>
+    <ul>
+      <li>Gestion de projet personnel</li>
+      <li>Développement web front-end</li>
+      <li>Structuration de données</li>
+      <li>Adaptation à des contraintes techniques (pas de serveur)</li>
+      <li>Amélioration de l’expérience utilisateur</li>
+    </ul>
+</section>
+  </main>
+
+  <footer>
+    Projet en cours – Dernière mise à jour : Janvier 2025 - Prochaine mise à jour prévue : Début juillet
+    <p>© 2025 Alice Meraud</p>
+  </footer>
+</body>
+</html>
+<script>
+    const toggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  toggle.classList.toggle('open');
+});
+
+// Optional: close menu when clicking on a link (on mobile)
+document.querySelectorAll('nav ul li a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      navLinks.classList.remove('show');
+      toggle.classList.remove('open');
+    }
+  });
+});
+</script>
