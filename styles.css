@@ -194,7 +194,7 @@
 nav {
     height: 60px; /* fixe une hauteur */
     line-height: 60px; /* pour centrer verticalement le texte */
-    padding: 10px;
+    padding: 15px;
   }
   
   /* padding top sur body pour ne pas que le contenu soit caché sous la nav */
@@ -209,6 +209,6 @@ nav {
   }
   
   header h1 {
-    margin-bottom: 8px; /* pas trop grand */
+    margin-bottom: 5px; /* pas trop grand */
   }
     
