@@ -157,7 +157,7 @@
     }
   
     nav ul.show {
-      max-height: 500px; /* suffisant pour plusieurs liens */
+    max-height: 1000px; /* suffisant pour plusieurs liens */
       opacity: 1;
     }
   
@@ -192,9 +192,9 @@
   }
 /* Barre de navigation fixe */
 nav {
-    height: 60px; /* fixe une hauteur */
+    /*height: 60px;*/ /* fixe une hauteur */
     line-height: 60px; /* pour centrer verticalement le texte */
-    padding: 15px;
+    padding: 15px 15px 15px;
   }
   
   /* padding top sur body pour ne pas que le contenu soit caché sous la nav */
